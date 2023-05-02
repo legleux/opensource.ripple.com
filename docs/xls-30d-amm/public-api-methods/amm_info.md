@@ -59,7 +59,7 @@ There is no commandline syntax for this method. You can use the [json method](ht
 
 <!-- MULTICODE_BLOCK_END -->
 
-<!-- 
+<!--
 [Try it! >](websocket-api-tool.html?server=wss%3A%2F%2Famm.devnet.rippletest.net%3A51233%2F#amm_info)-->
 
 The request includes the following parameters:
@@ -82,7 +82,7 @@ An example of a successful response:
 {
   "result": {
     "amm": {
-      "amm_account": "rp9E3FN3gNmvePGhYnf414T2TkUuoxu8vM",
+      "account": "rp9E3FN3gNmvePGhYnf414T2TkUuoxu8vM",
       "amount": "296890496",
       "amount2": {
         "currency": "TST",
@@ -139,7 +139,7 @@ An example of a successful response:
 {
   "result": {
     "amm": {
-      "amm_account": "rp9E3FN3gNmvePGhYnf414T2TkUuoxu8vM",
+      "account": "rp9E3FN3gNmvePGhYnf414T2TkUuoxu8vM",
       "amount": "296890496",
       "amount2": {
         "currency": "TST",
@@ -206,11 +206,11 @@ The `amm` field is an object describing the current status of an Automated Marke
 
 | Field           | Type                | Description |
 |-----------------|---------------------|-------------|
-| `amm_account`   | String              | The [Address](https://xrpl.org/basic-data-types.html#addresses) of the AMM Account. |
+| `account`   | String              | The [Address](https://xrpl.org/basic-data-types.html#addresses) of the AMM Account. |
 | `amount`        | [Currency Amount](https://xrpl.org/basic-data-types.html#specifying-currency-amounts) | The total amount of one asset in the AMM's pool. (Note: This could be `asset` _or_ `asset2` from the request.) |
 | `amount2`       | [Currency Amount](https://xrpl.org/basic-data-types.html#specifying-currency-amounts) | The total amount of the other asset in the AMM's pool. (Note: This could be `asset` _or_ `asset2` from the request.) |
 | `asset_frozen`  | Boolean             | _(Omitted for XRP)_ If `true`, the `amount` currency is currently [frozen](https://xrpl.org/freezes.html). |
-| `asset2_frozen` | Boolean             | _(Omitted for XRP)_ If `true`, the `amount2` currency is currently [frozen](https://xrpl.org/freezes.html). |
+| `asset2_frozen` | Boolean             | If `true`, the `amount2` currency is currently [frozen](https://xrpl.org/freezes.html). |
 | `auction_slot`  | Object              | _(May be omitted)_ An [Auction Slot Object](#auction-slot-object) describing the current auction slot holder, if there is one. |
 | `lp_token`      | [Currency Amount](https://xrpl.org/basic-data-types.html#specifying-currency-amounts) | The total amount of this AMM's LP Tokens outstanding. |
 | `trading_fee`   | Number              | The AMM's current trading fee, in units of 1/100,000; a value of 1 is equivalent to a 0.001% fee. |
